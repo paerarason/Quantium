@@ -9,11 +9,7 @@ def get_pink_morse(df_1):
     df_1=df_1[['sales','date','region']]
     return df_1
 
-
-df_1=pd.read_csv('data/daily_sales_data_0.csv')
-df_2=pd.read_csv('data/daily_sales_data_1.csv')
-df_3=pd.read_csv('data/daily_sales_data_2.csv')
-files=[df_1,df_2,df_3]
+files=[pd.read_csv('data/daily_sales_data_0.csv'),pd.read_csv('data/daily_sales_data_1.csv'),pd.read_csv('data/daily_sales_data_2.csv')]
 for i in files:
     dataframe=get_pink_morse(i)
-    dataframe.to_csv('result_csv.csv',mode='a',index='False',header="False")
+    dataframe.to_csv('result.csv',mode='a',index='False',header="False")
